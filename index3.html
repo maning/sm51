@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SM51 Lofts Apartment – Santolan, Pasig</title>
 
+  <!-- Made with the help of AI tools: ChatGPT, Gemini and, Mapbox Docs AI. -->
+
   <!-- Mapbox CSS -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
@@ -218,111 +220,88 @@
   
   <div class="hero">
     <div class="hero-overlay">
-      <h2 class="hero-text">Your Modern Loft in the City</h2>
+      <h2 class="hero-text"></h2>
     </div>
   </div>
 
   <main class="container">
     <section id="design" class="card">
-      <h2>Modern Filipino Design</h2>
+      <h2>Modern Filipino design</h2>
       <p>
        SM51: 3-story modern loft in Santolan, Pasig. Design prioritizes simplicity, efficiency, and climate adaptation. Units boast high ceilings, large windows for natural light, and modern finishes for open, airy living.
       </p>
     </section>
 
     <section id="location" class="card">
-      <h2>Prime Location</h2>
+      <h2>Accessible location</h2>
       <p style="font-size: 1rem; color: #4a4a4a; line-height: 1.6;">
-        Located in Santolan, Pasig City, we offer unparalleled convenience with easy access to major transport hubs and shopping centers.
-        The property is a short walk from key landmarks, making daily commutes and errands a breeze.
+        Located in Santolan, Pasig City, with easy access to transport (LRT2 Santolan), schools, and shopping centers (SM City Marikina, Ayala Feliz). 
       </p>
       <div id="map"></div>
     </section>
 
     <section id="amenities" class="card">
-      <h2>Our Amenities</h2>
+      <h2>Our amenities</h2>
       <div class="grid">
         <div>
           <h3>Secure & safe</h3>
           <p>
-            The building features a secure gated entrance, 24/7 CCTV surveillance, and modern fire safety systems to ensure your peace of mind.
+            A secure, gated entrance. Modern wiring, regular pest control and fire safety compliant.
           </p>
         </div>
         <div>
           <h3>Reliable utilities</h3>
           <p>
-            We provide a reliable water system with a booster pump, ensuring consistent water pressure and supply for all residents.
+          Equipped with a reliable water system and booster pump, ensuring consistent water pressure and supply for all residents.
           </p>
         </div>
         <div>
           <h3>Public transport access</h3>
           <p>
-            Our location along Marcos Highway provides easy access to public transport hubs going to Marikina, Pasig, and Quezon City.
+            Conveniently located along public transport hubs (Marcos Highway) with routes to Marikina, Pasig, and Quezon City.
           </p>
         </div>
       </div>
     </section>
 
     <section id="units" class="card">
-      <h2>Our Units</h2>
+      <h2>Our units</h2>
       <div class="grid">
         <div class="unit">
           <img src="img/1b.png" alt="Unit 1B floor plan">
           <div class="unit-info">
             <h3>Unit 1B (24 sqm)</h3>
-            <p>A cozy studio unit with a kitchenette, a well-appointed bathroom, and a flexible living area.</p>
+            <p>A cozy studio unit with a kitchenette, bathroom, and a flexible living area.</p>
           </div>
         </div>
         <div class="unit">
           <img src="img/2a.png" alt="Unit 2A floor plan">
           <div class="unit-info">
             <h3>Unit 2A (37 sqm)</h3>
-            <p>A spacious one-bedroom unit with a separate living area, perfect for individuals or couples.</p>
+            <p>A studio unit with a separate living area and loft for bedroom, perfect for individuals or couples and, a cat.</p>
           </div>
         </div>
         <div class="unit">
           <img src="img/2b_3b.png" alt="Unit 2B and 3B floor plan">
           <div class="unit-info">
             <h3>Unit 2B & 3B (55 sqm)</h3>
-            <p>A modern loft-style unit with an open floor plan and high ceilings, ideal for a small family.</p>
+            <p>A modern loft-style unit with an open floor plan and high ceilings, ideal for a small family and, a dog.</p>
           </div>
         </div>
       </div>
     </section>
 
+
     <section id="gallery" class="card">
       <h2>Photo Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="img/window.jpg" alt="Lobby area">
-        </div>
-        <div class="gallery-item">
-          <img src="img/gf_hallway.jpg" alt="Building hallway">
-        </div>
-        <div class="gallery-item">
-          <img src="img/l_vPHp0G.jpg" alt="Unit kitchen">
-        </div>
-        <div class="gallery-item">
-          <img src="img/chair.jpg" alt="Unit bedroom">
-        </div>
-        <div class="gallery-item">
-          <img src="img/G5gEbpUr.jpg" alt="Unit bathroom">
-        </div>
-        <div class="gallery-item">
-          <img src="img/exterior.jpg" alt="Building exterior">
-        </div>
-        <div class="gallery-item">
-          <img src="img/rbgU6adF.jpg" alt="Unit bathroom">
-        </div>
-        <div class="gallery-item">
-          <img src="img/wAZ3xY70.jpg" alt="Building exterior">
-        </div>
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Images will be dynamically loaded here by the script below -->
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 SM51 Lofts Apartment | Contact: +63 927 626 0421</p>
+    <p>&copy; 2024 SM51 Lofts Apartment | #51 Santa Maria Phase 3 Santolan, Pasig City | Contact: Jenie, +63 927 626 0421</p>
   </footer>
 
   <!-- Mapbox Script -->
@@ -333,21 +312,21 @@
         data: 'okj{Zclu}eFjCVfBz@xEnB~OzCbATiMnLsFbFwClCcWzVcIlHuTzSaIxI_AdAmBlBc@d@uRtSgEnA{FzFeIbIw@I_G`F??bUvVp@p@u@v@w@{@oPjOl@r@',
         color: '#73937C', // Sage Green
         label: 'LRT 2 Santolan Station',
-        coords: [121.0860,14.6221]
+        coords: [121.0859,14.6221]
       },
       {
         id: 'ayala_feliz',
         data: 'okj{Zclu}eFjCVfBz@xEnB~OzCbAThUeWzEyG|DkHxFwMjD{Hn@uAj@iBr@_CtGs]jBmWQ_WuA{[iCsTsAuIcFc^iAAqBc@aBsA_Jmv@',
         color: '#E27D60', // Terracotta
         label: 'Ayala Malls Feliz',
-        coords: [121.0939,14.6194]
+        coords: [121.0939,14.6199]
       },
       {
         id: 'sm_marikina',
-        data: '}kj{Zelu}eF}iA}KZmHrAkZqBgAqB{@wCg@cDGgKA??B|B^fg@?hE{LPgABsEHQNE\\r@nPP|F@lAe@`C{@x@_Bf@mTj@}]~@aHFm_@nA}AB??H~Jh@~LzA|Zu@r~@WrGgAjG}AbH_Opk@wAxF[rAU`BLdBp@fBrE~G~@tAnAbBuPxOkDnAeElCwGFcDl@aZnPoBhBkAdAgE|E{X|WoFfF',
+        data: 'clj{Zglu}eFwiA{KZmHz@sRVwFqBgAqB{@wCg@cDGgKAB|B\\ve@@n@?hE{LPgABsEHQNE\\r@nPP|F@lAi@dCw@t@_Bf@mTj@}]~@aHFm_@nA}AB??H~Jh@~LzA|Zu@r~@WrGgAjG}AbH_Opk@wAxF[rAU`BLdBp@fBrE~G~@tAfFlHdAvAfAvAuPxO??cEzAmD`CwGFcDl@aZnP??oBhBkAdAgE|E{X|WuDnD',
         color: '#D8C35A', // Muted Gold
         label: 'SM City Marikina',
-        coords: [121.0840,14.6261]
+        coords: [121.0842,14.6264]
       }
     ];
     
@@ -356,6 +335,15 @@
       container: 'map',
       style: 'mapbox://styles/mapbox/standard',
       baseURL: 'https://api.mapbox.com', // Fix for the cross-origin error
+      config: {
+        basemap: {
+          //lightPreset: "dawn",
+          showPointOfInterestLabels: false,
+          showAdminBoundaries: false,
+          showLandmarkIconLabels: false,
+          //theme: "monochrome"
+        }
+      },
       center: [121.08938, 14.62042],
       zoom: 15.5,
       maxZoom: 19.0,
@@ -419,6 +407,49 @@
           .addTo(map);
       });
     });
+
+    // Gallery script
+    document.addEventListener('DOMContentLoaded', () => {
+      const imageFilenames = [
+        '469428891_10237447510632650_8796800767557181488_n.jpg', 
+        'chair.jpg',
+        '469583308_10237447509272616_4198315515169283570_n.jpg', 
+        'exterior.jpg',
+        '470668268_10237525543903433_3184108879559742592_n.jpg', 
+        'gf_hallway.jpg', 
+        '470670006_10237525543823431_3723385299371521167_n.jpg', 
+        'l_vPHp0G.jpg', 
+        '470795820_10237525543463422_8172725001895904318_n.jpg', 
+        'qhlR7nXA.jpg', 
+        '471126436_10237542813655166_930627831749308446_n.jpg', 
+        'rbgU6adF.jpg', 
+        '471250715_10237542813335158_6389282336846922836_n.jpg', 
+        'wAZ3xY70.jpg', 
+        'AWO2QFn0.jpg', 
+        'window.jpg', 
+        'G5gEbpUr.jpg'];
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      const shuffledImages = shuffleArray(imageFilenames);
+      const galleryContainer = document.getElementById('gallery-container');
+      const numberOfImagesToShow = 4;
+
+      for (let i = 0; i < numberOfImagesToShow; i++) {
+        const imgPath = `img/${shuffledImages[i]}`;
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        div.innerHTML = `<img src="${imgPath}" alt="Gallery image ${i + 1}">`;
+        galleryContainer.appendChild(div);
+      }
+    });
+
   </script>
 
 </body>

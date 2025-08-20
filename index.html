@@ -3,76 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SM51 Lofts Apartment – Santolan</title>
+  <title>SM51 Lofts Apartment – Santolan, Pasig</title>
+
+  <!-- Made with the help of AI tools: ChatGPT, Gemini and, Mapbox Docs AI. -->
 
   <!-- Mapbox CSS -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
   <script src="https://unpkg.com/@mapbox/polyline@1.2.0/src/polyline.js"></script>
 
+  <!-- Google Fonts for Poppins and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --color-primary-bg: #F5F5DC;
+      --color-text: #36454F;
+      --color-accent-terracotta: #E27D60;
+      --color-accent-sage: #73937C;
+      --color-secondary-bg: #fff;
+      --color-shadow: rgba(0,0,0,0.1);
+    }
+    
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f9f9f9;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-primary-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* General containers for padding */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
 
     header {
-      background: #4f4e4e;
-      color: #fff;
-      padding: 2rem 1rem;
+      background: var(--color-text);
+      color: var(--color-primary-bg);
+      width: 100%;
       text-align: center;
+      padding: 2.5rem 0;
+      box-shadow: 0 4px 8px var(--color-shadow);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
     }
 
     nav {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     nav a {
-      color: #fff;
+      color: var(--color-primary-bg);
       margin: 0 1rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-accent-terracotta);
+    }
+
+    /* Hero Section */
+    .hero {
+      width: 100%;
+      height: clamp(300px, 50vh, 500px);
+      background: url('img/montage.png') no-repeat center center/cover;
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-text {
+      color: var(--color-primary-bg);
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      text-align: center;
     }
 
     section {
-      padding: 3rem 1rem;
-      max-width: 1100px;
-      margin: auto;
+      padding: 3rem 0;
+      width: 100%;
     }
 
     section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
       text-align: center;
-      margin-bottom: 1.5rem;
-      color: #2c3e50;
+      margin-bottom: 2rem;
+      color: var(--color-accent-terracotta);
+      font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
-    .design, .location, .amenities, .units {
-      background: #fff;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .card {
+      background: var(--color-secondary-bg);
+      margin-bottom: 2.5rem;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--color-shadow);
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .unit {
       background: #fefefe;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .unit:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
     .unit img {
@@ -83,21 +154,50 @@
     }
 
     .unit-info {
-      padding: 1rem;
+      padding: 1.5rem;
+    }
+
+    .unit-info h3 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--color-text);
+      margin-top: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px var(--color-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     /* Mapbox container */
     #map {
       width: 100%;
-      height: 400px;
-      border-radius: 8px;
+      height: 450px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--color-shadow);
+      margin-top: 1rem;
     }
 
     footer {
-      background: #4f4e4e;
-      color: #fff;
+      background: var(--color-text);
+      color: var(--color-primary-bg);
+      width: 100%;
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
+      margin-top: 3rem;
     }
 
     footer p {
@@ -108,97 +208,100 @@
 <body>
 
   <header>
-    <h1>SM51 Lofts Apartment - Santolan</h1>
+    <h1>SM51 Lofts Apartment</h1>
     <nav>
       <a href="#design">Design</a>
       <a href="#location">Location</a>
       <a href="#amenities">Amenities</a>
       <a href="#units">Units</a>
+      <a href="#gallery">Gallery</a>
     </nav>
   </header>
+  
+  <div class="hero">
+    <div class="hero-overlay">
+      <h2 class="hero-text"></h2>
+    </div>
+  </div>
 
-  <main>
-    <section id="design" class="design">
-      <h2>Design & Style</h2>
+  <main class="container">
+    <section id="design" class="card">
+      <h2>Modern Filipino design</h2>
       <p>
-        SM51: 3-story modern loft in Santolan, Pasig. Design prioritizes simplicity, efficiency, 
-        and climate adaptation. Units boast high ceilings, large windows for natural light, and 
-        modern finishes for open, airy living.
+       SM51: 3-story modern loft in Santolan, Pasig. Design prioritizes simplicity, efficiency, and climate adaptation. Units boast high ceilings, large windows for natural light, and modern finishes for open, airy living.
       </p>
-      <img src="img/montage.png" alt="Apartment Design" style="width:100%; margin-top:1rem; border-radius:8px;">
     </section>
 
-    <section id="location" class="location">
-      <h2>Location</h2>
+    <section id="location" class="card">
+      <h2>Accessible location</h2>
       <p style="font-size: 1rem; color: #4a4a4a; line-height: 1.6;">
-    Located in Santolan, Pasig City, with easy access to transport (
-    <span style="color: #51f5c1; font-weight: bold;">LRT2 Santolan</span>), 
-    schools, and shops (<span style="color: #f5ef51; font-weight: bold;">SM Marikina</span>, 
-    <span style="color: #f551da; font-weight: bold;">Ayala Feliz</span>).
-  </p>
-   <div id="map"></div>
+        Located in Santolan, Pasig City, with easy access to transport (LRT2 Santolan), schools, and shopping centers (SM City Marikina, Ayala Feliz). 
+      </p>
+      <div id="map"></div>
     </section>
 
-    <section id="amenities" class="amenities">
-      <h2>Amenities</h2>
+    <section id="amenities" class="card">
+      <h2>Our amenities</h2>
       <div class="grid">
-
         <div>
           <h3>Secure & safe</h3>
-          <p>A secure, gated entrance. Modern wiring and fire safety compliant.</p>
+          <p>
+            A secure, gated entrance. Modern wiring, regular pest control and fire safety compliant.
+          </p>
         </div>
         <div>
           <h3>Reliable utilities</h3>
-          <p>Equipped with a reliable water system and booster pump.</p>
+          <p>
+          Equipped with a reliable water system and booster pump, ensuring consistent water pressure and supply for all residents.
+          </p>
         </div>
         <div>
           <h3>Public transport access</h3>
-          <p>Conveniently located along public transport hubs (Marcos Highway) with routes to Marikina, Pasig, and Quezon City.</p>
+          <p>
+            Conveniently located along public transport hubs (Marcos Highway) with routes to Marikina, Pasig, and Quezon City.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="units" class="units">
-      <h2>Our Units</h2>
+    <section id="units" class="card">
+      <h2>Our units</h2>
       <div class="grid">
         <div class="unit">
-          <img src="img/1b.png" alt="Unit 1B">
+          <img src="img/1b.png" alt="Unit 1B floor plan">
           <div class="unit-info">
             <h3>Unit 1B (24 sqm)</h3>
-            <p>Cozy studio unit with kitchenette and bathroom.</p>
+            <p>A cozy studio unit with a kitchenette, bathroom, and a flexible living area.</p>
           </div>
         </div>
-        <!--
         <div class="unit">
-          <img src="img/1c.png" alt="Unit 1C">
-          <div class="unit-info">
-            <h3>Unit 1C (25 sqm)</h3>
-            <p>Cozy studio unit with kitchenette and bathroom.</p>
-          </div>
-        </div>
-        -->
-        <div class="unit">
-          <img src="img/2a.png" alt="Unit 2A">
+          <img src="img/2a.png" alt="Unit 2A floor plan">
           <div class="unit-info">
             <h3>Unit 2A (37 sqm)</h3>
-            <p>Spacious one-bedroom with separate living area.</p>
-            
+            <p>A studio unit with a separate living area and loft for bedroom, perfect for individuals or couples and, a cat.</p>
           </div>
         </div>
         <div class="unit">
-          <img src="img/2b_3b.png" alt="Unit 2B and 3B">
+          <img src="img/2b_3b.png" alt="Unit 2B and 3B floor plan">
           <div class="unit-info">
-            <h3>Unit 2B and 3B (55 sqm)</h3>
-            <p>Modern loft-style unit with open floor plan suitable for small family</p>
+            <h3>Unit 2B & 3B (55 sqm)</h3>
+            <p>A modern loft-style unit with an open floor plan and high ceilings, ideal for a small family and, a dog.</p>
           </div>
         </div>
-        <!-- Add more units here -->
+      </div>
+    </section>
+
+
+    <section id="gallery" class="card">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Images will be dynamically loaded here by the script below -->
       </div>
     </section>
   </main>
 
   <footer>
-     <p>&copy; SM51 Lofts Apartment | Contact: +63 927 626 0421</p>
+    <p>&copy; 2024 SM51 Lofts Apartment | #51 Santa Maria Phase 3 Santolan, Pasig City | Contact: Jenie, +63 927 626 0421</p>
   </footer>
 
   <!-- Mapbox Script -->
@@ -207,23 +310,23 @@
       {
         id: 'lrt_santolan',
         data: 'okj{Zclu}eFjCVfBz@xEnB~OzCbATiMnLsFbFwClCcWzVcIlHuTzSaIxI_AdAmBlBc@d@uRtSgEnA{FzFeIbIw@I_G`F??bUvVp@p@u@v@w@{@oPjOl@r@',
-        color: '#51f5c1',
+        color: '#73937C', // Sage Green
         label: 'LRT 2 Santolan Station',
-        startCoord: [121.0860,14.6221]
+        coords: [121.0859,14.6221]
       },
       {
         id: 'ayala_feliz',
         data: 'okj{Zclu}eFjCVfBz@xEnB~OzCbAThUeWzEyG|DkHxFwMjD{Hn@uAj@iBr@_CtGs]jBmWQ_WuA{[iCsTsAuIcFc^iAAqBc@aBsA_Jmv@',
-        color: '#f551da',
+        color: '#E27D60', // Terracotta
         label: 'Ayala Malls Feliz',
-        startCoord: [121.0939,14.6194]
+        coords: [121.0939,14.6199]
       },
       {
         id: 'sm_marikina',
-        data: '}kj{Zelu}eF}iA}KZmHrAkZqBgAqB{@wCg@cDGgKA??B|B^fg@?hE{LPgABsEHQNE\\r@nPP|F@lAe@`C{@x@_Bf@mTj@}]~@aHFm_@nA}AB??H~Jh@~LzA|Zu@r~@WrGgAjG}AbH_Opk@wAxF[rAU`BLdBp@fBrE~G~@tAnAbBuPxOkDnAeElCwGFcDl@aZnPoBhBkAdAgE|E{X|WoFfF',
-        color: '#f5ef51',
+        data: 'clj{Zglu}eFwiA{KZmHz@sRVwFqBgAqB{@wCg@cDGgKAB|B\\ve@@n@?hE{LPgABsEHQNE\\r@nPP|F@lAi@dCw@t@_Bf@mTj@}]~@aHFm_@nA}AB??H~Jh@~LzA|Zu@r~@WrGgAjG}AbH_Opk@wAxF[rAU`BLdBp@fBrE~G~@tAfFlHdAvAfAvAuPxO??cEzAmD`CwGFcDl@aZnP??oBhBkAdAgE|E{X|WuDnD',
+        color: '#D8C35A', // Muted Gold
         label: 'SM City Marikina',
-        startCoord: [121.0840,14.6261]
+        coords: [121.0842,14.6264]
       }
     ];
     
@@ -231,13 +334,14 @@
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/standard',
+      baseURL: 'https://api.mapbox.com', // Fix for the cross-origin error
       config: {
         basemap: {
-          lightPreset: "dawn",
-          showPointOfInterestLabels: true,
+          //lightPreset: "dawn",
+          showPointOfInterestLabels: false,
           showAdminBoundaries: false,
           showLandmarkIconLabels: false,
-          theme: "monochrome"
+          //theme: "monochrome"
         }
       },
       center: [121.08938, 14.62042],
@@ -281,8 +385,71 @@
             'line-opacity': 0.7
           }
         });
+
+        // Add a marker for the destination
+        const el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundColor = route.color;
+        el.style.width = '12px';
+        el.style.height = '12px';
+        el.style.borderRadius = '50%';
+        el.style.border = '2px solid white';
+        
+        new mapboxgl.Marker(el)
+          .setLngLat(route.coords)
+          .addTo(map);
+
+        // Add a popup with the label
+        const popup = new mapboxgl.Popup({ offset: 25 }).setText(route.label);
+        new mapboxgl.Marker(el)
+          .setLngLat(route.coords)
+          .setPopup(popup)
+          .addTo(map);
       });
     });
+
+    // Gallery script
+    document.addEventListener('DOMContentLoaded', () => {
+      const imageFilenames = [
+        '469428891_10237447510632650_8796800767557181488_n.jpg', 
+        'chair.jpg',
+        '469583308_10237447509272616_4198315515169283570_n.jpg', 
+        'exterior.jpg',
+        '470668268_10237525543903433_3184108879559742592_n.jpg', 
+        'gf_hallway.jpg', 
+        '470670006_10237525543823431_3723385299371521167_n.jpg', 
+        'l_vPHp0G.jpg', 
+        '470795820_10237525543463422_8172725001895904318_n.jpg', 
+        'qhlR7nXA.jpg', 
+        '471126436_10237542813655166_930627831749308446_n.jpg', 
+        'rbgU6adF.jpg', 
+        '471250715_10237542813335158_6389282336846922836_n.jpg', 
+        'wAZ3xY70.jpg', 
+        'AWO2QFn0.jpg', 
+        'window.jpg', 
+        'G5gEbpUr.jpg'];
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      const shuffledImages = shuffleArray(imageFilenames);
+      const galleryContainer = document.getElementById('gallery-container');
+      const numberOfImagesToShow = 4;
+
+      for (let i = 0; i < numberOfImagesToShow; i++) {
+        const imgPath = `img/${shuffledImages[i]}`;
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        div.innerHTML = `<img src="${imgPath}" alt="Gallery image ${i + 1}">`;
+        galleryContainer.appendChild(div);
+      }
+    });
+
   </script>
 
 </body>

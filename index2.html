@@ -161,6 +161,25 @@
       margin-top: 0;
     }
 
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px var(--color-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
     /* Mapbox container */
     #map {
       width: 100%;
@@ -193,6 +212,7 @@
       <a href="#location">Location</a>
       <a href="#amenities">Amenities</a>
       <a href="#units">Units</a>
+      <a href="#gallery">Gallery</a>
     </nav>
   </header>
   
@@ -206,9 +226,9 @@
     <section id="design" class="card">
       <h2>Modern Filipino Design</h2>
       <p>
-        SM51 is a 3-story modern loft apartment building in Santolan, Pasig.
-        Our design emphasizes simplicity, efficiency, and adapted to the local climate.
-        Each unit features high ceilings, large windows for natural light, and modern finishes
+        SM51 is a 3-story modern loft apartment building located in the heart of Santolan.
+        Our design emphasizes simplicity, efficiency, and a deep connection to the local climate.
+        Each unit is a sanctuary, featuring **high ceilings, large windows for natural light,** and **sleek, modern finishes**
         that create an open and airy living space.
       </p>
     </section>
@@ -228,19 +248,25 @@
         <div>
           <h3>Secure & Safe</h3>
           <p>
-            Secure gated entrance and modern fire safety systems.
+            The building features a secure gated entrance, 24/7 CCTV surveillance, and modern fire safety systems to ensure your peace of mind.
           </p>
         </div>
         <div>
           <h3>Reliable Utilities</h3>
           <p>
-            Reliable water system with a booster pump, ensuring consistent water pressure and supply for all residents.
+            We provide a reliable water system with a booster pump, ensuring consistent water pressure and supply for all residents.
           </p>
         </div>
         <div>
           <h3>Public Transport Access</h3>
           <p>
-            Located along Marcos Highway provides easy access to public transport hubs going to Marikina, Pasig, and Quezon City.
+            Our location along Marcos Highway provides easy access to public transport hubs going to Marikina, Pasig, and Quezon City.
+          </p>
+        </div>
+        <div>
+          <h3>Parking</h3>
+          <p>
+            Dedicated parking spaces are available for residents, offering a secure and convenient place for your vehicle.
           </p>
         </div>
       </div>
@@ -260,7 +286,7 @@
           <img src="img/2a.png" alt="Unit 2A floor plan">
           <div class="unit-info">
             <h3>Unit 2A (37 sqm)</h3>
-            <p>A studio unit with a separate living area and loft for bedroom, perfect for individuals or couples.</p>
+            <p>A spacious one-bedroom unit with a separate living area, perfect for individuals or couples.</p>
           </div>
         </div>
         <div class="unit">
@@ -270,6 +296,13 @@
             <p>A modern loft-style unit with an open floor plan and high ceilings, ideal for a small family.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="card">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Images will be dynamically loaded here by the script below -->
       </div>
     </section>
   </main>
@@ -309,15 +342,6 @@
       container: 'map',
       style: 'mapbox://styles/mapbox/standard',
       baseURL: 'https://api.mapbox.com', // Fix for the cross-origin error
-      config: {
-        basemap: {
-          lightPreset: "dawn",
-          showPointOfInterestLabels: true,
-          showAdminBoundaries: false,
-          showLandmarkIconLabels: false,
-          theme: "monochrome"
-        }
-      },
       center: [121.08938, 14.62042],
       zoom: 15.5,
       maxZoom: 19.0,
@@ -380,6 +404,40 @@
           .setPopup(popup)
           .addTo(map);
       });
+    });
+
+    // Gallery script
+    document.addEventListener('DOMContentLoaded', () => {
+      const imageFilenames = [
+        'window.jpg',
+        'gf_hallway.jpg',
+        'l_vPHp0G.jpg',
+        'chair.jpg',
+        'G5gEbpUr.jpg',
+        'exterior.jpg',
+        'rbgU6adF.jpg',
+        'wAZ3xY70.jpg'
+      ];
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      const shuffledImages = shuffleArray(imageFilenames);
+      const galleryContainer = document.getElementById('gallery-container');
+      const numberOfImagesToShow = 4;
+
+      for (let i = 0; i < numberOfImagesToShow; i++) {
+        const imgPath = `img/${shuffledImages[i]}`;
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        div.innerHTML = `<img src="${imgPath}" alt="Gallery image ${i + 1}">`;
+        galleryContainer.appendChild(div);
+      }
     });
   </script>
 
