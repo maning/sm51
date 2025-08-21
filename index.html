@@ -7,7 +7,7 @@
 
   <!-- Made with the help of AI tools: ChatGPT, Gemini and, Mapbox Docs AI. -->
 
-  <!-- Mapbox CSS -->
+  <!-- Mapbox CSS and libs -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
   <script src="https://unpkg.com/@mapbox/polyline@1.2.0/src/polyline.js"></script>
@@ -36,12 +36,11 @@
       overflow-x: hidden;
     }
     
-
     /* General containers for padding */
     .container {
-      max-width: 1200px; /* adjust depending on how wide you want */
-      margin: 0 auto;    /* centers it, equal left/right spacing */
-      padding: 0 20px;   /* keeps a bit of breathing room on both sides */
+      max-width: 1200px; 
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     header {
@@ -78,7 +77,7 @@
 
     /* Hero Section */
     .hero {
-      width: 100%; /* Ensure it spans the full width of the viewport */
+      width: 100%;
       height: clamp(300px, 50vh, 500px);
       background: url('img/montage.png') no-repeat center center/cover;
       position: relative;
@@ -118,26 +117,24 @@
       font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
-    
-
     .card {
       background: var(--color-secondary-bg);
       margin-bottom: 2.5rem;
-      padding: 2rem;   /* reduced padding for consistency */
+      padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 4px 12px var(--color-shadow);
-      box-sizing: border-box; /* ensures padding doesn’t break width */
+      box-sizing: border-box; 
     }
     /* Apply to sections inside cards so content aligns */
     .card > * {
       margin-left: auto;
       margin-right: auto;
-      max-width: 100%; /* or 900px if you want narrower text blocks */
+      max-width: 100%;
     }
     .card > *:not(h2) {
       margin-left: auto;
       margin-right: auto;
-      max-width: 900px;  /* keeps text, maps, and grids aligned */
+      max-width: 900px;
     }
 
     .grid {
@@ -195,7 +192,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    /* Mapbox container */
+    /* Map container */
     #map {
       width: 100%;
       height: 450px;
@@ -207,17 +204,18 @@
     footer {
       background: var(--color-text);
       color: var(--color-primary-bg);
-      padding: 20px 0; /* only top/bottom */
+      padding: 20px 0;
     }
+    
     footer .footer-content {
-      max-width: 1200px;  /* keeps it aligned with header/page */
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;    /* same left/right padding as header */
-      text-align: left;   /* makes sure it stays left-aligned */
+      padding: 0 20px;
+      text-align: left;
     }
 
-    
   </style>
+
 </head>
 <body>
 <div class="container">
@@ -243,8 +241,8 @@
     <section id="design" class="card">
       <h2>Modern Filipino design</h2>
       <p>
-       SM51: 3-story modern loft in Santolan, Pasig. Design (by <a href="https://www.eastudio.ph/">Emerging Architects Studio</a>) 
-       prioritizes simplicity, efficiency, and climate adaptation. Units boast high ceilings, large windows for natural light, 
+       SM51: 3-story modern loft in Santolan, Pasig. Designed by <a href="https://www.eastudio.ph/">Emerging Architects Studio</a>, 
+       it prioritizes simplicity, efficiency, and climate adaptation. Units has high ceilings, large windows for natural light, 
        and modern finishes for open, airy living.
       </p>
     </section>
@@ -291,7 +289,7 @@
           <img src="img/1b.png" alt="Unit 1B floor plan">
           <div class="unit-info">
             <h3>Unit 1B (24 sqm)</h3>
-            <p>A cozy studio unit with a kitchenette, bathroom, and a flexible living area.</p>
+            <p>A cozy studio unit with a kitchen, bathroom, and a flexible living area.</p>
           </div>
         </div>
         <div class="unit">
