@@ -33,16 +33,15 @@
       line-height: 1.7;
       color: var(--color-text);
       background: var(--color-primary-bg);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      overflow-x: hidden;
     }
+    
 
     /* General containers for padding */
     .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1rem;
+      max-width: 1200px; /* adjust depending on how wide you want */
+      margin: 0 auto;    /* centers it, equal left/right spacing */
+      padding: 0 20px;   /* keeps a bit of breathing room on both sides */
     }
 
     header {
@@ -79,12 +78,12 @@
 
     /* Hero Section */
     .hero {
-      width: 100%;
+      width: 100%; /* Ensure it spans the full width of the viewport */
       height: clamp(300px, 50vh, 500px);
       background: url('img/montage.png') no-repeat center center/cover;
       position: relative;
       margin-bottom: 3rem;
-    }
+}
 
     .hero-overlay {
       position: absolute;
@@ -119,12 +118,26 @@
       font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
+    
+
     .card {
       background: var(--color-secondary-bg);
       margin-bottom: 2.5rem;
-      padding: 2.5rem;
+      padding: 2rem;   /* reduced padding for consistency */
       border-radius: 12px;
       box-shadow: 0 4px 12px var(--color-shadow);
+      box-sizing: border-box; /* ensures padding doesn’t break width */
+    }
+    /* Apply to sections inside cards so content aligns */
+    .card > * {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%; /* or 900px if you want narrower text blocks */
+    }
+    .card > *:not(h2) {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 900px;  /* keeps text, maps, and grids aligned */
     }
 
     .grid {
@@ -194,20 +207,22 @@
     footer {
       background: var(--color-text);
       color: var(--color-primary-bg);
-      width: 100%;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+      padding: 20px 0; /* only top/bottom */
+    }
+    footer .footer-content {
+      max-width: 1200px;  /* keeps it aligned with header/page */
+      margin: 0 auto;
+      padding: 0 20px;    /* same left/right padding as header */
+      text-align: left;   /* makes sure it stays left-aligned */
     }
 
-    footer p {
-      margin: 0;
-    }
+    
   </style>
 </head>
 <body>
-
+<div class="container">
   <header>
+    
     <h1>SM51 Lofts Apartment</h1>
     <nav>
       <a href="#design">Design</a>
@@ -224,7 +239,7 @@
     </div>
   </div>
 
-  <main class="container">
+  <main>
     <section id="design" class="card">
       <h2>Modern Filipino design</h2>
       <p>
@@ -308,8 +323,13 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 SM51 Lofts Apartment | #51 Santa Maria Phase 3 Santolan, Pasig City | Contact: Jenie, +63 927 626 0421</p>
+    <div class="footer-content">
+    <p>&copy; 2025 SM51 Lofts Apartment | 
+      #51 Santa Maria Phase 3 Santolan, Pasig City | 
+      Contact: Jenie, +63 927 626 0421</p>
+    </div>
   </footer>
+
 
   <!-- Mapbox Script -->
   <script>
@@ -460,6 +480,6 @@
     });
 
   </script>
-
+</div>
 </body>
 </html>
