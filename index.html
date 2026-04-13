@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SM51 Lofts Apartment – Santolan, Pasig</title>
 
-  <!-- Made with the help of AI tools: ChatGPT, Gemini and, Mapbox Docs AI. All images are original and NOT AI generated.-->
+  <!-- Open Graph -->
+  <meta property="og:title" content="SM51 Lofts Apartment – Santolan, Pasig">
+  <meta property="og:description" content="Modern loft living in Santolan, Pasig City. High ceilings, natural light, and easy access to LRT2, SM Marikina, and Ayala Feliz.">
+  <meta property="og:image" content="https://maning.github.io/sm51/img/montage.png">
+  <meta property="og:url" content="https://maning.github.io/sm51/">
+  <meta property="og:type" content="website">
+
+  <!-- Built with AI assistance. All photos are original and not AI-generated. -->
 
   <!-- Mapbox CSS and libs -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
@@ -27,6 +34,10 @@
       --color-shadow: rgba(0,0,0,0.1);
     }
     
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -141,6 +152,12 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      justify-items: center;
+    }
+
+    .grid > .unit:only-child {
+      max-width: 480px;
+      width: 100%;
     }
 
     .unit {
@@ -201,6 +218,29 @@
       margin-top: 1rem;
     }
 
+    .cta-wrapper {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--color-accent-terracotta);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #c96a4e;
+      transform: translateY(-2px);
+    }
+
     footer {
       background: var(--color-text);
       color: var(--color-primary-bg);
@@ -223,53 +263,100 @@
     
     <h1>SM51 Lofts Apartment</h1>
     <nav>
-      <a href="#design">Design</a>
-      <a href="#location">Location</a>
-      <a href="#amenities">Amenities</a>
       <a href="#units">Units</a>
       <a href="#gallery">Gallery</a>
+      <a href="#design">Design</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#location">Location</a>
     </nav>
   </header>
   
   <div class="hero">
     <div class="hero-overlay">
-      <h2 class="hero-text"> </h2>
+      <h2 class="hero-text">Modern loft living in Santolan, Pasig</h2>
     </div>
   </div>
 
   <main>
+    <section id="units" class="card">
+      <h2>Our units</h2>
+      <p>Modern, open-plan lofts with a large single living space, high ceilings,
+        and no enclosed bedrooms - designed to maximize natural light and create
+        a spacious, airy feel.
+      </p>
+      <div class="grid">
+        <!--
+        <div class="unit">
+          <img src="img/1b.png" alt="Unit 1B floor plan">
+          <div class="unit-info">
+            <h3>Loft Unit 1B (24 sqm)</h3>
+            <p>A cozy studio unit with a kitchen, bathroom, and a flexible living area.
+              <a href="https://www.facebook.com/media/set/?set=a.122095556756998418&type=3"
+              target="_blank"
+              rel="noopener noreferrer">
+              See more photos</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="unit">
+          <img src="img/2a.png" alt="Unit 2A floor plan">
+          <div class="unit-info">
+            <h3>Loft Unit 2A (37 sqm)</h3>
+            <p>A studio unit with a separate living area and loft for bedroom, perfect for individuals
+              or couples and, a cat.
+            <a href="https://www.facebook.com/media/set/?set=a.122095559054998418&type=3"
+              target="_blank"
+              rel="noopener noreferrer">
+              See more photos</a>.
+            </p>
+          </div>
+        </div>
+        -->
+        <div class="unit">
+          <img src="img/2b_3b.png" alt="Unit 2B and 3B floor plan">
+          <div class="unit-info">
+            <h3>Loft Unit 3B (55 sqm)</h3>
+            <p>A modern loft-style unit with an open floor plan and high ceilings, ideal for a
+              small family and, a dog.
+            <a href="https://www.facebook.com/media/set/?set=a.122095560446998418&type=3"
+              target="_blank"
+              rel="noopener noreferrer">
+              See more photos</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="cta-wrapper">
+        <a href="https://www.facebook.com/profile.php?id=61579952540811"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="cta-button">Message us on Facebook</a>
+      </div>
+    </section>
+
+    <section id="gallery" class="card">
+      <h2>Gallery</h2>
+      <div class="gallery-grid" id="gallery-container">
+        <!-- Images will be dynamically loaded here by the script below -->
+      </div>
+    </section>
+
     <section id="design" class="card">
       <h2>Modern Filipino design</h2>
       <p>
-       SM51: A 3-story modern loft in Santolan, Pasig. Designed by 
-       <a href="https://www.eastudio.ph/" 
-       target="_blank" 
+       SM51: A 3-story modern loft in Santolan, Pasig. Designed by
+       <a href="https://www.eastudio.ph/"
+       target="_blank"
        rel="noopener noreferrer">
-       Emerging Architects Studio</a>, 
-       it blends simplicity, efficiency, and natural ventilation for comfort. 
-       
-       Each unit features 
-       high ceilings, large windows for natural light, and modern finishes for bright, airy living.
+       Emerging Architects Studio</a>,
+       it blends simplicity, efficiency, and natural ventilation for comfort.
 
-       
-      </p>
-    </section>
+       Each unit features high ceilings, large windows for natural light, and modern finishes for bright, airy living.
+       The building draws on Filipino tropical design traditions — open layouts, cross-ventilation, and materials suited to the local climate.
 
-    <section id="location" class="card">
-      <h2>Accessible location</h2>
-      <p style="font-size: 1rem; color: #4a4a4a; line-height: 1.6;">
-        Located in Santolan, Pasig City
-        (<a href="https://maps.app.goo.gl/EHZNdzYKXB9Dowou9"
-      target="_blank" 
-      rel="noopener noreferrer" 
-      style="font-weight: bold">GoogleMaps</a>, 
-      <a href="https://ul.waze.com/ul?ll=14.62040500%2C121.08932912&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
-      target="_blank" 
-      rel="noopener noreferrer" 
-      style="font-weight: bold">Waze</a>), 
-      with easy access to transport (LRT2 Santolan), schools, and shopping centers (SM City Marikina, Ayala Feliz). 
+
       </p>
-      <div id="map"></div>
     </section>
 
     <section id="amenities" class="card">
@@ -284,84 +371,34 @@
         <div>
           <h3>Reliable utilities</h3>
           <p>
-          Equipped with a reliable water system and booster pump, ensuring consistent water pressure 
+          Equipped with a reliable water system and booster pump, ensuring consistent water pressure
           and supply for all residents.
           </p>
         </div>
-        <div>
-          <h3>Public transport access</h3>
-          <p>
-            Conveniently located along public transport hubs (Marcos Highway) with routes to 
-            Marikina, Pasig, and Quezon City.
-          </p>
-        </div>
       </div>
     </section>
 
-    <section id="units" class="card">
-      <h2>Available units</h2>
-      <p>Our units are modern, open-plan lofts. 
-        They have a large, single living space with high ceilings and no separate, 
-        enclosed bedrooms. We've designed them this way to maximize natural light 
-         and create a spacious, airy feel, offering a unique living experience.
+    <section id="location" class="card">
+      <h2>Accessible location</h2>
+      <p style="font-size: 1rem; color: #4a4a4a; line-height: 1.6;">
+        Located in Santolan, Pasig City
+        (<a href="https://maps.app.goo.gl/EHZNdzYKXB9Dowou9"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="font-weight: bold">GoogleMaps</a>,
+      <a href="https://ul.waze.com/ul?ll=14.62040500%2C121.08932912&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="font-weight: bold">Waze</a>),
+      with easy access to transport (LRT2 Santolan), schools, and shopping centers (SM City Marikina, Ayala Feliz).
       </p>
-      <div class="grid">
-        <!-- 
-        <div class="unit">
-          <img src="img/1b.png" alt="Unit 1B floor plan">
-          <div class="unit-info">
-            <h3>Loft Unit 1B (24 sqm)</h3>
-            <p>A cozy studio unit with a kitchen, bathroom, and a flexible living area.
-              <a href="https://www.facebook.com/media/set/?set=a.122095556756998418&type=3"
-              target="_blank" 
-              rel="noopener noreferrer">
-              See more photos</a>.
-            </p>
-          </div>
-        </div>
-        
-        <div class="unit">
-          <img src="img/2a.png" alt="Unit 2A floor plan">
-          <div class="unit-info">
-            <h3>Loft Unit 2A (37 sqm)</h3>
-            <p>A studio unit with a separate living area and loft for bedroom, perfect for individuals 
-              or couples and, a cat.
-            <a href="https://www.facebook.com/media/set/?set=a.122095559054998418&type=3"
-              target="_blank" 
-              rel="noopener noreferrer">
-              See more photos</a>.
-            </p>
-          </div>
-        </div>
-        -->
-        <div class="unit">
-          <img src="img/2b_3b.png" alt="Unit 2B and 3B floor plan">
-          <div class="unit-info">
-            <h3>Loft Unit 2B (55 sqm)</h3>
-            <p>A modern loft-style unit with an open floor plan and high ceilings, ideal for a 
-              small family and, a dog.
-            <a href="https://www.facebook.com/media/set/?set=a.122095560446998418&type=3"
-              target="_blank" 
-              rel="noopener noreferrer">
-              See more photos</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="gallery" class="card">
-      <h2>Gallery</h2>
-      <div class="gallery-grid" id="gallery-container">
-        <!-- Images will be dynamically loaded here by the script below -->
-      </div>
+      <div id="map"></div>
     </section>
   </main>
 
   <footer>
   <div class="footer-content">
-    <p>&copy; 2025 SM51 Lofts Apartment | 
+    <p>&copy; 2026 SM51 Lofts Apartment | 
       #51 Santa Maria Phase 3 Santolan, Pasig City 
       (
       <a href="https://maps.app.goo.gl/EHZNdzYKXB9Dowou9"
@@ -466,7 +503,7 @@
           }
         });
 
-        // Add a marker for the destination
+        // Add a marker with popup for the destination
         const el = document.createElement('div');
         el.className = 'marker';
         el.style.backgroundColor = route.color;
@@ -474,12 +511,7 @@
         el.style.height = '12px';
         el.style.borderRadius = '50%';
         el.style.border = '2px solid white';
-        
-        new mapboxgl.Marker(el)
-          .setLngLat(route.coords)
-          .addTo(map);
 
-        // Add a popup with the label
         const popup = new mapboxgl.Popup({ offset: 25 }).setText(route.label);
         new mapboxgl.Marker(el)
           .setLngLat(route.coords)
@@ -527,7 +559,7 @@
         const imgPath = `img/${shuffledImages[i]}`;
         const div = document.createElement('div');
         div.className = 'gallery-item';
-        div.innerHTML = `<img src="${imgPath}" alt="Gallery image ${i + 1}">`;
+        div.innerHTML = `<img src="${imgPath}" alt="Gallery image ${i + 1}" loading="lazy">`;
         galleryContainer.appendChild(div);
       }
     });
