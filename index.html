@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SM51 Lofts Apartment – Santolan, Pasig</title>
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="SM51 Lofts Apartment – Santolan, Pasig">
+  <meta property="og:description" content="Modern loft living in Santolan, Pasig City. High ceilings, natural light, and easy access to LRT2, SM Marikina, and Ayala Feliz.">
+  <meta property="og:image" content="https://maning.github.io/sm51/img/montage.png">
+  <meta property="og:url" content="https://maning.github.io/sm51/">
+  <meta property="og:type" content="website">
+
   <!-- Made with the help of AI tools: ChatGPT, Gemini and, Mapbox Docs AI. All images are original and NOT AI generated.-->
 
   <!-- Mapbox CSS and libs -->
@@ -233,7 +240,7 @@
   
   <div class="hero">
     <div class="hero-overlay">
-      <h2 class="hero-text"> </h2>
+      <h2 class="hero-text">Modern loft living in Santolan, Pasig</h2>
     </div>
   </div>
 
@@ -361,7 +368,7 @@
 
   <footer>
   <div class="footer-content">
-    <p>&copy; 2025 SM51 Lofts Apartment | 
+    <p>&copy; 2026 SM51 Lofts Apartment | 
       #51 Santa Maria Phase 3 Santolan, Pasig City 
       (
       <a href="https://maps.app.goo.gl/EHZNdzYKXB9Dowou9"
@@ -466,7 +473,7 @@
           }
         });
 
-        // Add a marker for the destination
+        // Add a marker with popup for the destination
         const el = document.createElement('div');
         el.className = 'marker';
         el.style.backgroundColor = route.color;
@@ -474,12 +481,7 @@
         el.style.height = '12px';
         el.style.borderRadius = '50%';
         el.style.border = '2px solid white';
-        
-        new mapboxgl.Marker(el)
-          .setLngLat(route.coords)
-          .addTo(map);
 
-        // Add a popup with the label
         const popup = new mapboxgl.Popup({ offset: 25 }).setText(route.label);
         new mapboxgl.Marker(el)
           .setLngLat(route.coords)
