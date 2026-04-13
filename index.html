@@ -148,6 +148,12 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      justify-items: center;
+    }
+
+    .grid > .unit:only-child {
+      max-width: 480px;
+      width: 100%;
     }
 
     .unit {
@@ -331,11 +337,11 @@
     <section id="units" class="card">
       <h2>Our units</h2>
       <p>Modern, open-plan lofts with a large single living space, high ceilings,
-        and no enclosed bedrooms — designed to maximize natural light and create
+        and no enclosed bedrooms - designed to maximize natural light and create
         a spacious, airy feel.
       </p>
       <div class="grid">
-        <!-- 
+        
         <div class="unit">
           <img src="img/1b.png" alt="Unit 1B floor plan">
           <div class="unit-info">
@@ -348,7 +354,7 @@
             </p>
           </div>
         </div>
-        
+        <!-- 
         <div class="unit">
           <img src="img/2a.png" alt="Unit 2A floor plan">
           <div class="unit-info">
@@ -366,7 +372,7 @@
         <div class="unit">
           <img src="img/2b_3b.png" alt="Unit 2B and 3B floor plan">
           <div class="unit-info">
-            <h3>Loft Unit 2B (55 sqm)</h3>
+            <h3>Loft Unit 3B (55 sqm)</h3>
             <p>A modern loft-style unit with an open floor plan and high ceilings, ideal for a 
               small family and, a dog.
             <a href="https://www.facebook.com/media/set/?set=a.122095560446998418&type=3"
