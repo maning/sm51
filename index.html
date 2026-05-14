@@ -161,6 +161,7 @@
     }
 
     .unit {
+      position: relative;
       background: #fefefe;
       border-radius: 12px;
       overflow: hidden;
@@ -188,6 +189,21 @@
       font-family: 'Poppins', sans-serif;
       color: var(--color-text);
       margin-top: 0;
+    }
+
+    .unit-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: var(--color-accent-terracotta);
+      color: #fff;
+      font-size: 0.7rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 99px;
     }
 
     .gallery-grid {
@@ -285,8 +301,8 @@
         a spacious, airy feel.
       </p>
       <div class="grid">
-        <!--
         <div class="unit">
+          <span class="unit-badge">Taken</span>
           <img src="img/1b.png" alt="Unit 1B floor plan">
           <div class="unit-info">
             <h3>Loft Unit 1B (24 sqm)</h3>
@@ -300,6 +316,7 @@
         </div>
 
         <div class="unit">
+          <span class="unit-badge">Taken</span>
           <img src="img/2a.png" alt="Unit 2A floor plan">
           <div class="unit-info">
             <h3>Loft Unit 2A (37 sqm)</h3>
@@ -312,8 +329,9 @@
             </p>
           </div>
         </div>
-        -->
+
         <div class="unit">
+          <span class="unit-badge">Taken</span>
           <img src="img/2b_3b.png" alt="Unit 2B and 3B floor plan">
           <div class="unit-info">
             <h3>Loft Unit 3B (55 sqm)</h3>
